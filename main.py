@@ -1,6 +1,8 @@
+import prettytable
 from ga import GeneticAlgorithm
 from data import Data
-import prettytable
+from population import Population
+POPULATION_SIZE = 5
 # g = GeneticAlgorithm()
 
 # g.Run()
@@ -20,7 +22,11 @@ for course in data.courses:
     # print("Classes of course", course.id)
     for class_ in course.classes:
         # print("Students chose class", class_.id)
-        for i in range(len(class_.ordered_students)):
+        for i in range(len(class_.ordered_student_ids)):
             # print(i, class_.ordered_students[i])
-            students_chose_class_table.add_row([course.id, class_.id, i, class_.ordered_students[i]])
+            students_chose_class_table.add_row([course.id, class_.id, i, class_.ordered_student_ids[i]])
 print(students_chose_class_table)
+
+population = Population(POPULATION_SIZE, data)
+population.print()
+

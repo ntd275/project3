@@ -5,7 +5,7 @@ class Course:
         self.n_classes = n_classes
         self.init_classes()
     def init_classes(self):
-        MAX_N_PLACES = 50
+        MAX_N_PLACES = 6
         self.classes = []
         for i in range(self.n_classes):
             self.classes.append(Class(i, MAX_N_PLACES, self.n_classes))
